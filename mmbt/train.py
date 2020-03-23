@@ -45,7 +45,7 @@ def get_args(parser):
     parser.add_argument("--max_epochs", type=int, default=100)
     parser.add_argument("--max_seq_len", type=int, default=64)
     parser.add_argument("--model", type=str, default="concatbert", choices=["bow", "img", "bert", "concatbow", "concatbert", "mmbt"])
-    parser.add_argument("--n_workers", type=int, default=12)
+    parser.add_argument("--n_workers", type=int, default=2)
     parser.add_argument("--name", type=str, default="nameless")
     parser.add_argument("--num_image_embeds", type=int, default=1)
     parser.add_argument("--patience", type=int, default=3)
