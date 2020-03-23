@@ -24,8 +24,8 @@ from mmbt.utils.utils import *
 
 
 def get_args(parser):
-    parser.add_argument("--batch_sz", type=int, default=128)
-    parser.add_argument("--bert_model", type=str, default="bert-base-uncased", choices=["bert-base-uncased", "bert-large-uncased"])
+    parser.add_argument("--batch_sz", type=int, default=1)
+    parser.add_argument("--bert_model", type=str, default="bert-base-multilingual-cased", choices=["bert-base-uncased", "bert-large-uncased"])
     parser.add_argument("--data_path", type=str, default="/path/to/data_dir/")
     parser.add_argument("--drop_img_percent", type=float, default=0.0)
     parser.add_argument("--dropout", type=float, default=0.1)
@@ -43,16 +43,16 @@ def get_args(parser):
     parser.add_argument("--lr_factor", type=float, default=0.5)
     parser.add_argument("--lr_patience", type=int, default=2)
     parser.add_argument("--max_epochs", type=int, default=100)
-    parser.add_argument("--max_seq_len", type=int, default=512)
-    parser.add_argument("--model", type=str, default="bow", choices=["bow", "img", "bert", "concatbow", "concatbert", "mmbt"])
+    parser.add_argument("--max_seq_len", type=int, default=64)
+    parser.add_argument("--model", type=str, default="concatbert", choices=["bow", "img", "bert", "concatbow", "concatbert", "mmbt"])
     parser.add_argument("--n_workers", type=int, default=12)
     parser.add_argument("--name", type=str, default="nameless")
     parser.add_argument("--num_image_embeds", type=int, default=1)
-    parser.add_argument("--patience", type=int, default=10)
+    parser.add_argument("--patience", type=int, default=3)
     parser.add_argument("--savedir", type=str, default="/path/to/save_dir/")
     parser.add_argument("--seed", type=int, default=123)
-    parser.add_argument("--task", type=str, default="mmimdb", choices=["mmimdb", "vsnli", "food101"])
-    parser.add_argument("--task_type", type=str, default="multilabel", choices=["multilabel", "classification"])
+    parser.add_argument("--task", type=str, default="food101", choices=["mmimdb", "vsnli", "food101"])
+    parser.add_argument("--task_type", type=str, default="classification", choices=["multilabel", "classification"])
     parser.add_argument("--warmup", type=float, default=0.1)
     parser.add_argument("--weight_classes", type=int, default=1)
 
